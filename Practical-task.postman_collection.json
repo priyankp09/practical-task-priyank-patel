@@ -1,0 +1,389 @@
+{
+	"info": {
+		"_postman_id": "778c9f1a-b433-4f61-a7be-91f3b5064d49",
+		"name": "Practical-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26089170"
+	},
+	"item": [
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "create role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n   \"roleName\" : \"superadmin\",\r\n   \"accessModules\" : [\"user\",\"product\"],\r\n   \"active\" : false\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/role/roles",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"role",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmJiMzk3NTRiYzE0OWQ5ZDAyMmI0NzQiLCJlbWFpbCI6InByaXlhbmtwYXRlbEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InByaXlhbmsiLCJpYXQiOjE3MjM1ODk5MTQsImV4cCI6MTcyMzY3NjMxNH0.DLx3YRCj9JOUAHOYMKozj3mE_pmSorVZfeHMcd8Aq7g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/role/get-all-roles",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"role",
+								"get-all-roles"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "admin",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update role",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n   \"roleName\" : \"Admin\",\r\n   \"accessModules\" : [\"user\"],\r\n   \"active\" : true\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/role/66bb0281afef322f5c4a3558",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"role",
+								"66bb0281afef322f5c4a3558"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete role",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/role/66bb0281afef322f5c4a3558",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"role",
+								"66bb0281afef322f5c4a3558"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get role by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/role/66bb2acc754951fccf3312c3",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"role",
+								"66bb2acc754951fccf3312c3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "create-user / Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"priyank\",\r\n    \"firstName\": \"Priyank\",\r\n    \"email\": \"priyankpatel@gmail.com\",\r\n    \"password\": \"Admin@123\",\r\n    \"role\": \"66bb2acc754951fccf3312c3\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/user/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/user/get-all-users",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"get-all-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-user-by-Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/user/66bb39754bc149d9d022b474",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"66bb39754bc149d9d022b474"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user by Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"priyankp\",\r\n    \"firstName\": \"Priyank\",\r\n    \"email\": \"priyankpatel@gmail.com\",\r\n    \"password\": \"Admin@123\",\r\n    \"role\": \"66bb2acc754951fccf3312c3\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/user/66bb39754bc149d9d022b474/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"66bb39754bc149d9d022b474",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check-access",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"moduleName\" : \"product\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/user/66bb39754bc149d9d022b474/check-access",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"66bb39754bc149d9d022b474",
+								"check-access"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-same",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filter\" : {\"firstName\": \"Priyank\"},\r\n    \"updateData\": {\r\n        \"lastName\": \"Patel\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/user/update-same",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"update-same"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-different",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"updates\": [\r\n        {\r\n            \"id\": \"66bb39754bc149d9d022b474\",\r\n            \"data\": {\r\n                \"firstName\": \"John\",\r\n                \"lastName\": \"Doe\"\r\n            }\r\n        },\r\n          {\r\n            \"id\": \"66bc8b6e8c1c6c06b7f6e37b\",\r\n            \"data\": {\r\n                \"email\": \"viratkohli@gmail.com\"\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/user/update-different",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"update-different"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"priyankpatel@gmail.com\",\r\n    \"password\" : \"Admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/v1/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
